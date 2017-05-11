@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Psychic Game</title>
+  </head>
+  <body>
+    
+    <p>Type a letter here: <input type="text" id="header" onkeyup ="pGuess()"> </p>
+     <p id="yourGuesses"> Your Guesses So Far </p>
+    <p id="wins"> Wins </p>
+    <p id="losses"> Losses </p>
+    <p id="guessLeft">Guesses Left </p>
+   
+   
+    <script>
+    //This is the computer's guess
+    var compGuess = "m"
+    var score = 0;
+    var playerGuess = []
+ /*This is the var for the score
+  var score = 0;*/
+
+    /*This is the code for the player to click a letter*/
+    function pGuess() { 
+      var x = document.getElementById("header").innerHTML = playerGuess;
+      var message;
+      
+if (playerGuess === compGuess){
+    message = "You're psychic"; 
+} else {
+    message = "Keep trying";
+}
+  document.getElementById("header").innerHTML = message;
+}
+
+
+console.log(pGuess);
+    
+
+ 
+    </script>
+  
+ 
+</body>
+</html>
+
+ 
+    	
+
+
+
+
+
+
+
+    
