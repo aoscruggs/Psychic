@@ -7,7 +7,8 @@
   </head>
   <body>
     
-    <p>Type a letter here: <input type="text" id="header" onkeyup ="pGuess()"> </p>
+    <p>Type a letter here: <input type="text" id="header"> </p>
+    <div id="message"></div>
      <p id="yourGuesses"> Your Guesses So Far </p>
     <p id="wins"> Wins </p>
     <p id="losses"> Losses </p>
@@ -18,25 +19,28 @@
     //This is the computer's guess
     var compGuess = "m"
     var score = 0;
-    var playerGuess = []
+    var playerGuess = [];
  /*This is the var for the score
   var score = 0;*/
 
     /*This is the code for the player to click a letter*/
-    function pGuess() { 
-      var x = document.getElementById("header").innerHTML = playerGuess;
+    document.getElementById("header").onkeyup = function(event) { 
+    
       var message;
-      
-if (playerGuess === compGuess){
+      var thisGuess = event.key
+
+/*This pushes the thisGuess into playerGuess */
+
+      playerGuess.push(thisGuess) 
+if (thisGuess === compGuess){
     message = "You're psychic"; 
 } else {
     message = "Keep trying";
 }
-  document.getElementById("header").innerHTML = message;
+  document.getElementById("message").innerHTML = message;
 }
 
 
-console.log(pGuess);
     
 
  
